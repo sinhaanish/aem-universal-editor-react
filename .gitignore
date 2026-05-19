@@ -10,5 +10,13 @@ build/
 .env.production.local
 .env.test.local
 
+# App Builder — contains runtime credentials and private keys
+.env
+.aws.tmp.creds.json
+
+# Build artifacts
+.parcel-cache/
+dist/
+
 # misc
 .DS_Store

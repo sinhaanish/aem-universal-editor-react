@@ -1,0 +1,22 @@
+application:
+  actions: actions
+  web:
+    src: build
+  runtimeManifest:
+    packages:
+      wknd-headless:
+        license: Apache-2.0
+        actions:
+          graphql-proxy:
+            function: actions/graphql-proxy/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            annotations:
+              require-adobe-auth: false
+            inputs:
+              AEM_HOST: $AEM_HOST
+              AEM_TECHNICAL_CLIENT_ID: $AEM_TECHNICAL_CLIENT_ID
+              AEM_TECHNICAL_CLIENT_SECRET: $AEM_TECHNICAL_CLIENT_SECRET
+              AEM_ORG_ID: $AEM_ORG_ID
+              AEM_TECHNICAL_ACCOUNT_ID: $AEM_TECHNICAL_ACCOUNT_ID
+              AEM_PRIVATE_KEY_BASE64: $AEM_PRIVATE_KEY_BASE64

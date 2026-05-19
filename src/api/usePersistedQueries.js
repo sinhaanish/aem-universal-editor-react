@@ -10,22 +10,43 @@ it.
 import aemHeadlessClient from "./aemHeadlessClient";
 import { useEffect, useState } from "react";
 
+const ACTION_URL = process.env.REACT_APP_ACTION_URL;
+
 async function fetchPersistedQuery(persistedQueryName, queryParameters) {
   let data;
   let err;
 
-  try {
-    const response = await aemHeadlessClient.runPersistedQuery(
-      persistedQueryName,
-      queryParameters
-    );
-    data = response?.data;
-  } catch (e) {
-    err = e
-      .toJSON()
-      ?.map((error) => error.message)
-      ?.join(", ");
-    console.error(e.toJSON());
+  // In production (App Builder), use the server-side proxy action so credentials
+  // never reach the browser. In local dev, call AEM directly via the headless client.
+  if (ACTION_URL) {
+    try {
+      const params = new URLSearchParams({ queryName: persistedQueryName });
+      if (queryParameters) {
+        Object.entries(queryParameters).forEach(([k, v]) =>
+          params.append(`var_${k}`, v)
+        );
+      }
+      const res = await fetch(`${ACTION_URL}?${params}`);
+      const json = await res.json();
+      data = json?.data;
+      if (!res.ok) err = json?.error || `HTTP ${res.status}`;
+    } catch (e) {
+      err = e.message;
+    }
+  } else {
+    try {
+      const response = await aemHeadlessClient.runPersistedQuery(
+        persistedQueryName,
+        queryParameters
+      );
+      data = response?.data;
+    } catch (e) {
+      err = e
+        .toJSON()
+        ?.map((error) => error.message)
+        ?.join(", ");
+      console.error(e.toJSON());
+    }
   }
 
   return { data, err };

@@ -2,6 +2,7 @@
   "name": "aem-tutorial-team-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@adobe/aem-headless-client-js": "^3.3.0",
     "@adobe/aem-headless-client-nodejs": "^1.1.0",
@@ -23,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && aio app deploy && curl -s -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' https://644509-wkndheadlessreact-stage.adobeio-static.net/index.html > /dev/null && echo 'CDN cache busted'"
   },
   "eslintConfig": {
     "extends": "react-app"

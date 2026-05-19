@@ -1,0 +1,291 @@
+{
+  "project": {
+    "id": "4566206088345673518",
+    "name": "WKNDHeadlessReact",
+    "title": "WKND Headless React",
+    "org": {
+      "id": "644509",
+      "name": "Premier Support Consulting",
+      "ims_org_id": "CDA11DC661266AB70A495F8B@AdobeOrg",
+      "details": {
+        "services": [
+          {
+            "name": "Adobe Workfront",
+            "code": "Workfront API",
+            "type": "adobeid"
+          },
+          {
+            "name": "Adobe Express Embed SDK",
+            "code": "CCEmbedCompanionAPI",
+            "type": "adobeid"
+          },
+          {
+            "name": "AEM Assets Author API",
+            "code": "AEM Assets Author API",
+            "type": "adobeid"
+          },
+          {
+            "name": "Adobe Fusion",
+            "code": "Fusion-API",
+            "type": "adobeid"
+          },
+          {
+            "name": "AEM CS Sites Content Management",
+            "code": "AEM CS Sites Content Management",
+            "type": "adobeid"
+          },
+          {
+            "name": "Lightroom Services",
+            "code": "LightroomPartnersSDK",
+            "type": "adobeid"
+          },
+          {
+            "name": "API Mesh for Adobe Developer App Builder",
+            "code": "GraphQLServiceSDK",
+            "type": "adobeid"
+          },
+          {
+            "name": "AEM Dynamic Media API",
+            "code": "AEM-Assets-Dynamic-Media-with-OpenAPI",
+            "type": "adobeid"
+          },
+          {
+            "name": "Frame.io API",
+            "code": "FrameioAPISDK",
+            "type": "adobeid"
+          },
+          {
+            "name": "PDF Embed API",
+            "code": "ViewSDK",
+            "type": "adobeid"
+          },
+          {
+            "name": "Adobe Commerce with Adobe ID",
+            "code": "AdobeCommerceWithAdobeID",
+            "type": "adobeid"
+          },
+          {
+            "name": "AEM Forms Delivery and Runtime API",
+            "code": "FormsDeliveryRuntimeSDK",
+            "type": "adobeid"
+          },
+          {
+            "name": "Adobe Analytics",
+            "code": "AdobeAnalyticsSDK",
+            "type": "analytics"
+          },
+          {
+            "name": "Asset Compute",
+            "code": "AssetComputeSDK",
+            "type": "entp"
+          },
+          {
+            "name": "AEM CS Sites Content Management",
+            "code": "AEM CS Sites Content Management",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Campaign",
+            "code": "CampaignSDK",
+            "type": "entp"
+          },
+          {
+            "name": "I/O Management API",
+            "code": "AdobeIOManagementAPISDK",
+            "type": "entp"
+          },
+          {
+            "name": "Experience Platform API",
+            "code": "McDataServicesSdk",
+            "type": "entp"
+          },
+          {
+            "name": "Smart Content",
+            "code": "MCSmartContentServicesSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Journey Optimizer",
+            "code": "AdobeJourneyOptimizerSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Remove Background - Firefly and Creative Cloud Automation",
+            "code": "ImageCutoutV2SDK",
+            "type": "entp"
+          },
+          {
+            "name": "AEM Dynamic Media API",
+            "code": "AEM-Assets-Dynamic-Media-with-OpenAPI",
+            "type": "entp"
+          },
+          {
+            "name": "Primetime Ad Insertion",
+            "code": "Ad Config Service",
+            "type": "entp"
+          },
+          {
+            "name": "Privacy Service API",
+            "code": "McGdprSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Lightroom API - Firefly Services",
+            "code": "LightroomCCESDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Fusion",
+            "code": "Fusion-API",
+            "type": "entp"
+          },
+          {
+            "name": "Edge Delivery Services",
+            "code": "nogw-4011f358-2edb-4b01-acb8-3c84e0cbb299",
+            "type": "entp"
+          },
+          {
+            "name": "App Builder Data Services",
+            "code": "AppBuilderDataServicesSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Experience Cloud Setup Automation",
+            "code": "DxSetupAutomationSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Target",
+            "code": "AdobeTargetSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Photoshop API - Firefly Services",
+            "code": "PhotoshopCCESDK",
+            "type": "entp"
+          },
+          {
+            "name": "User Management API",
+            "code": "UserMgmtSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Automated Forms Conversion",
+            "code": "AutomatedFormsSDK",
+            "type": "entp"
+          },
+          {
+            "name": "I/O Events",
+            "code": "CloudIntegrationSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Analytics",
+            "code": "AdobeAnalyticsSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Workfront",
+            "code": "Workfront API",
+            "type": "entp"
+          },
+          {
+            "name": "Audience Manager API",
+            "code": "AudienceManagerCustomerSDK",
+            "type": "entp"
+          },
+          {
+            "name": "AEM Forms Communications API",
+            "code": "FormsCommunicationsSDK",
+            "type": "entp"
+          },
+          {
+            "name": "GenStudio API",
+            "code": "GenStudioSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Cloud Manager",
+            "code": "CloudManagerSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Express Review API",
+            "code": "ExpressReviewService",
+            "type": "entp"
+          },
+          {
+            "name": "Journey Orchestration",
+            "code": "JourneySDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe Status API",
+            "code": "StatusAPISDK",
+            "type": "entp"
+          },
+          {
+            "name": "Customer Journey Analytics",
+            "code": "CJA SDK",
+            "type": "entp"
+          },
+          {
+            "name": "Places",
+            "code": "McPlacesSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Globalization Content Service",
+            "code": "gcs-partner",
+            "type": "entp"
+          },
+          {
+            "name": "Assurance API",
+            "code": "Griffon - Graffias",
+            "type": "entp"
+          },
+          {
+            "name": "AEM Forms Delivery and Runtime API",
+            "code": "FormsDeliveryRuntimeSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Experience Platform Launch API",
+            "code": "McDtmSDK",
+            "type": "entp"
+          },
+          {
+            "name": "Adobe I/O Events for Adobe Commerce",
+            "code": "commerceeventing",
+            "type": "entp"
+          },
+          {
+            "name": "AEM Assets Author API",
+            "code": "AEM Assets Author API",
+            "type": "entp"
+          },
+          {
+            "name": "AEM Brand Portal",
+            "code": "AEMBrandPortalSDK",
+            "type": "entp"
+          }
+        ]
+      }
+    },
+    "workspace": {
+      "id": "4566206088345710514",
+      "name": "Stage",
+      "title": "Stage",
+      "action_url": "https://644509-wkndheadlessreact-stage.adobeioruntime.net",
+      "app_url": "https://644509-wkndheadlessreact-stage.adobeio-static.net",
+      "details": {
+        "credentials": [],
+        "services": [],
+        "events": {
+          "registrations": []
+        },
+        "mesh": {}
+      }
+    }
+  }
+}
