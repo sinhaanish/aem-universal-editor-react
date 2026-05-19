@@ -17,14 +17,12 @@ import "./Teams.scss";
 function Teams() {
   const { teams, error } = useAllTeams();
 
-  // Handle error and loading conditions
   if (error) {
     return <Error errorMessage={error} />;
   } else if (!teams) {
     return <Loading />;
   }
 
-  // Teams have been populated by AEM GraphQL query. Display the teams.
   return (
     <div className="teams">
       {teams.map((team, index) => {
@@ -34,24 +32,52 @@ function Teams() {
   );
 }
 
-// Render single Team
-function Team({ title, shortName, description, teamMembers }) {
-  // Must have title, shortName and at least 1 team member
+function Team({ _path, title, shortName, description, teamMembers }) {
   if (!title || !shortName || !teamMembers) {
     return null;
   }
 
   return (
-    <div className="team">
-      <h2 className="team__title">{title}</h2>
-      <p className="team__description">{description.plaintext}</p>
+    // Universal Editor: marks this element as an editable Content Fragment reference
+    <div
+      className="team"
+      data-aue-resource={`urn:aemconnection:${_path}/jcr:content/data/master`}
+      data-aue-type="reference"
+      data-aue-label={title}
+    >
+      {/* Universal Editor: inline-editable text field mapped to the 'title' CF property */}
+      <h2
+        className="team__title"
+        data-aue-prop="title"
+        data-aue-type="text"
+        data-aue-label="Title"
+      >
+        {title}
+      </h2>
+
+      {/* Universal Editor: inline-editable rich text field mapped to 'description' */}
+      <p
+        className="team__description"
+        data-aue-prop="description"
+        data-aue-type="richtext"
+        data-aue-label="Description"
+      >
+        {description.plaintext}
+      </p>
+
       <div>
         <h4 className="team__members-title">Members</h4>
         <ul className="team__members">
-          {/* Render the referenced Person models associated with the team */}
           {teamMembers.map((teamMember, index) => {
             return (
-              <li key={index} className="team__member">
+              // Universal Editor: each member link references the Person CF directly
+              <li
+                key={index}
+                className="team__member"
+                data-aue-resource={`urn:aemconnection:${teamMember._path}/jcr:content/data/master`}
+                data-aue-type="reference"
+                data-aue-label={teamMember.fullName}
+              >
                 <Link to={`/person/${teamMember.fullName}`}>
                   {teamMember.fullName}
                 </Link>
