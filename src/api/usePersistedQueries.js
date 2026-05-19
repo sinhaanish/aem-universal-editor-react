@@ -42,7 +42,7 @@ export function useAllTeams() {
   useEffect(() => {
     async function fetchData() {
       const { data, err } = await fetchPersistedQuery(
-        "headless-content/all-teams"
+        "my-project/all-teams"
       );
       setTeams(data?.teamList?.items);
       setError(err);
@@ -66,7 +66,7 @@ export function usePersonByName(fullName) {
       const queryParameters = { name: fullName };
 
       const { data, err } = await fetchPersistedQuery(
-        "headless-content/person-by-name",
+        "my-project/person-by-name",
         queryParameters
       );
 
