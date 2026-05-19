@@ -32,54 +32,54 @@ async function fetchPersistedQuery(persistedQueryName, queryParameters) {
 }
 
 /**
- * Fetches all teams with their member references.
- * Calls the persisted query: headless-content/all-teams
+ * Fetches all adventures.
+ * Calls the persisted query: wknd-shared/adventures-all
  */
-export function useAllTeams() {
-  const [teams, setTeams] = useState(null);
+export function useAllAdventures() {
+  const [adventures, setAdventures] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       const { data, err } = await fetchPersistedQuery(
-        "my-project/all-teams"
+        "wknd-shared/adventures-all"
       );
-      setTeams(data?.teamList?.items);
+      setAdventures(data?.adventureList?.items);
       setError(err);
     }
     fetchData();
   }, []);
 
-  return { teams, error };
+  return { adventures, error };
 }
 
 /**
- * Fetches a single person by full name.
- * Calls the persisted query: headless-content/person-by-name
+ * Fetches a single adventure by slug.
+ * Calls the persisted query: wknd-shared/adventure-by-slug
  */
-export function usePersonByName(fullName) {
-  const [person, setPerson] = useState(null);
+export function useAdventureBySlug(slug) {
+  const [adventure, setAdventure] = useState(null);
   const [errors, setErrors] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const queryParameters = { name: fullName };
+      const queryParameters = { slug };
 
       const { data, err } = await fetchPersistedQuery(
-        "my-project/person-by-name",
+        "wknd-shared/adventure-by-slug",
         queryParameters
       );
 
       if (err) {
         setErrors(err);
-      } else if (data?.personList?.items?.length === 1) {
-        setPerson(data.personList.items[0]);
+      } else if (data?.adventureList?.items?.length === 1) {
+        setAdventure(data.adventureList.items[0]);
       } else {
-        setErrors(`Cannot find person with name: ${fullName}`);
+        setErrors(`Cannot find adventure with slug: ${slug}`);
       }
     }
     fetchData();
-  }, [fullName]);
+  }, [slug]);
 
-  return { person, errors };
+  return { adventure, errors };
 }

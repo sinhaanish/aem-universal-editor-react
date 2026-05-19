@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "./images/wknd-icon.svg";
 import Home from "./components/Home";
-import Person from "./components/Person";
+import Adventure from "./components/Adventure";
 import "./App.scss";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/person/:fullName" element={<Person />} />
+          <Route path="/adventure/:slug" element={<Adventure />} />
         </Routes>
       </div>
     </Router>

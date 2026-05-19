@@ -7,17 +7,15 @@ accordance with the terms of the Adobe license agreement accompanying
 it.
 */
 import React from "react";
-import Teams from "./Teams";
+import Adventures from "./Adventures";
 import "./Home.scss";
 
-/***
- * Displays a grid of Team & People Link to find more details
- */
 function Home() {
   return (
     <div className="home">
-      <h2 className="home__title">WKND Teams</h2>
-      <Teams />
+      <h2 className="home__title">WKND Adventures</h2>
+      <p className="home__subtitle">Explore our curated collection of outdoor adventures around the world.</p>
+      <Adventures />
     </div>
   );
 }
