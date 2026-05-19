@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "title": "WKND Teams Components",
+      "items": [
+        {
+          "title": "Person",
+          "description": "A team member person card",
+          "icon": "user",
+          "definition": {
+            "title": "Person",
+            "id": "person",
+            "plugins": {
+              "aem": {
+                "page": {
+                  "resourceType": "wknd-shared/components/person",
+                  "template": {
+                    "model": "wknd-shared/models/person"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

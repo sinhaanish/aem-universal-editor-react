@@ -31,11 +31,19 @@ function Person() {
 
   // Render the person data
   return (
-    <div className="person">
+    <div
+      className="person"
+      data-aue-resource={`urn:aemconnection:${person._path}/jcr:content/data/master`}
+      data-aue-type="reference"
+      data-aue-label={person.fullName}
+    >
       <img
         className="person__image"
-        src={process.env.REACT_APP_HOST_URI+person.profilePicture._path}
+        src={process.env.REACT_APP_HOST_URI + person.profilePicture._path}
         alt={person.fullName}
+        data-aue-prop="profilePicture"
+        data-aue-type="media"
+        data-aue-label="Profile Picture"
       />
       <div className="person__occupations">
         {person.occupation.map((occupation, index) => {
@@ -47,9 +55,20 @@ function Person() {
         })}
       </div>
       <div className="person__content">
-        <h1 className="person__full-name">{person.fullName}</h1>
-        <div className="person__biography">
-          {/* Use this utility to transform multi-line text JSON into HTML */}
+        <h1
+          className="person__full-name"
+          data-aue-prop="fullName"
+          data-aue-type="text"
+          data-aue-label="Full Name"
+        >
+          {person.fullName}
+        </h1>
+        <div
+          className="person__biography"
+          data-aue-prop="biographyText"
+          data-aue-type="richtext"
+          data-aue-label="Biography"
+        >
           {mapJsonRichText(person.biographyText.json)}
         </div>
       </div>
