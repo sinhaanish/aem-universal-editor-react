@@ -83,3 +83,58 @@ export function useAdventureBySlug(slug) {
 
   return { adventure, errors };
 }
+
+/**
+ * Fetches all articles (paginated endpoint, flattened to items array).
+ * Calls the persisted query: wknd-shared/articles-all
+ */
+export function useAllArticles() {
+  const [articles, setArticles] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { data, err } = await fetchPersistedQuery(
+        "wknd-shared/articles-all"
+      );
+      // articles-all uses a paginated (edges/node) response shape
+      const items = data?.articlePaginated?.edges?.map((e) => e.node) ?? null;
+      setArticles(items);
+      setError(err);
+    }
+    fetchData();
+  }, []);
+
+  return { articles, error };
+}
+
+/**
+ * Fetches a single article by slug.
+ * Calls the persisted query: wknd-shared/article-by-slug
+ */
+export function useArticleBySlug(slug) {
+  const [article, setArticle] = useState(null);
+  const [errors, setErrors] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const queryParameters = { slug };
+
+      const { data, err } = await fetchPersistedQuery(
+        "wknd-shared/article-by-slug",
+        queryParameters
+      );
+
+      if (err) {
+        setErrors(err);
+      } else if (data?.articleList?.items?.length === 1) {
+        setArticle(data.articleList.items[0]);
+      } else {
+        setErrors(`Cannot find article with slug: ${slug}`);
+      }
+    }
+    fetchData();
+  }, [slug]);
+
+  return { article, errors };
+}

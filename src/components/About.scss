@@ -1,0 +1,146 @@
+/*
+Copyright 2022 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it.
+*/
+
+@import "../styles/variables";
+
+.about {
+  margin-bottom: 5rem;
+}
+
+.about__hero {
+  background-color: $black;
+  color: $white;
+  padding: 4rem 2rem;
+  margin: 0 -14px 3rem;
+  text-align: center;
+}
+
+.about__headline {
+  font-family: $font-family-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: $white;
+  margin: 0 0 1rem;
+}
+
+.about__tagline {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__section {
+  margin-bottom: 3rem;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
+
+.about__section-title {
+  font-size: $font-size-h2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $yellow;
+}
+
+.about__link {
+  color: $blue;
+  font-weight: 600;
+}
+
+// ── Values grid ──────────────────────────────────────────────────────────────
+
+.about__values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__value {
+  background-color: $gray-lighter;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 3px solid $yellow;
+}
+
+.about__value-icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about__value-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+}
+
+.about__value-body {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: $gray;
+  margin: 0;
+}
+
+// ── Stats strip ───────────────────────────────────────────────────────────────
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: $black;
+  color: $white;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about__stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $yellow;
+  font-family: $font-family-serif;
+}
+
+.about__stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+}

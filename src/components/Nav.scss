@@ -1,0 +1,133 @@
+/*
+Copyright 2022 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it.
+*/
+
+@import "../styles/variables";
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $white;
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: $black;
+}
+
+.nav__logo {
+  width: 48px;
+  height: 48px;
+}
+
+.nav__brand-name {
+  font-family: $font-family-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $black;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-bottom-color: $yellow;
+  }
+
+  &.nav__link--active {
+    border-bottom-color: $yellow;
+  }
+}
+
+.nav__rule {
+  margin: 0;
+}
+
+// Hamburger — hidden on desktop, shown on mobile
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  min-width: unset;
+  margin-right: 0;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $black;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &.nav__hamburger--open {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem $gutter-padding;
+    gap: 1rem;
+    border-bottom: 1px solid $gray-light;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    &.nav__links--open {
+      display: flex;
+    }
+  }
+}

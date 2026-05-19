@@ -8,26 +8,30 @@ it.
 */
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
-import logo from "./images/wknd-icon.svg";
+import Nav from "./components/Nav";
 import Home from "./components/Home";
+import AdventuresPage from "./components/AdventuresPage";
 import Adventure from "./components/Adventure";
+import Articles from "./components/Articles";
+import Article from "./components/Article";
+import About from "./components/About";
 import "./App.scss";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header>
-          <Link to={"/"}>
-            <img src={logo} className="logo" alt="WKND Logo" />
-          </Link>
-          <hr />
-        </header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/adventure/:slug" element={<Adventure />} />
-        </Routes>
+        <Nav />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/adventures" element={<AdventuresPage />} />
+            <Route path="/adventure/:slug" element={<Adventure />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/article/:slug" element={<Article />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
